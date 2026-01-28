@@ -1,5 +1,5 @@
 {
-  "name": "dieselz-android-dev",
+  "name": "diesels-antiques-dev",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
 
   "features": {
@@ -22,7 +22,7 @@
 
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "cd diesels-antiques && npm install",
 
   "forwardPorts": [19000, 19001, 19002, 8081],
 
