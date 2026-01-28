@@ -1,0 +1,48 @@
+{
+  "name": "dieselz-android-dev",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts",
+      "nodeGypDependencies": true
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers-contrib/features/android-sdk:2": {
+      "version": "latest",
+      "installPlatformTools": true,
+      "installBuildTools": true,
+      "installNDK": false
+    },
+    "ghcr.io/devcontainers-contrib/features/java:1": {
+      "version": "temurin-17"
+    }
+  },
+
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  "postCreateCommand": "npm install",
+
+  "forwardPorts": [19000, 19001, 19002, 8081],
+
+  "containerEnv": {
+    "ANDROID_HOME": "/usr/local/android-sdk",
+    "ANDROID_SDK_ROOT": "/usr/local/android-sdk",
+    "JAVA_HOME": "/usr/local/sdkman/candidates/java/current"
+  },
+
+  "remoteUser": "vscode",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "msjsdiag.vscode-react-native",
+        "ms-androidtools.vscode-android"
+      ]
+    }
+  }
+}
